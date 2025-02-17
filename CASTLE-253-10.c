@@ -15,7 +15,8 @@ void echo()
     printf("%s\n", data);
 }
 
-void main()
+int main()
 {
     echo();
+    return 0;
 }

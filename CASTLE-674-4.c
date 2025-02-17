@@ -6,11 +6,12 @@ int recursivePrintArray(int* arr, int size, int index) {
     }
 
     printf("%d\n", arr[index]);
-    recursivePrintArray(arr, size, index++);
+    return recursivePrintArray(arr, size, index++);
 }
 
 int main() {
     int arr[] = {1, 2, 3, 4, 5};
-    recursivePrintArray(arr, 5, 0);
+    int ret = recursivePrintArray(arr, 5, 0);
+    printf("Ret: %d\n", ret);
     return 0;
 }

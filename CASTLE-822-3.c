@@ -26,5 +26,8 @@ int main(const int argc, const char *argv[]) {
     ptr += number;
 
     printf("Number: %d\n", *ptr);
+
+    free(ptr);
+    
     return 0;
 }

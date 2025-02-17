@@ -17,6 +17,9 @@ int main() {
     pthread_t thread1, thread2;
     int* a = malloc(sizeof(int));
     int* b = malloc(sizeof(int));
+    if (a == NULL || b == NULL) {
+        exit(-1);
+    }
     *a = 0;
     *b = 1;
 

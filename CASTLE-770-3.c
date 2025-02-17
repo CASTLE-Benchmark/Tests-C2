@@ -38,6 +38,10 @@ char* createRandChars(unsigned int n, int* seed) {
 
 int main () {
     char** buffers = (char**)malloc(sizeof(char*) * ROUND_LIMIT);
+    if (buffers == NULL) {
+        exit(1);
+    }
+    
     int bufferInd = 0;
     int seed = 31;
     unsigned int input = 0;

@@ -30,7 +30,7 @@ int main() {
 
     // Create threads
     for (t = 0; t < NUM_THREADS; t++) {
-        rc = pthread_create(&threads[t], NULL, write_to_file, (void*)t);
+        rc = pthread_create(&threads[t], NULL, write_to_file, &t);
         if (rc) {
             printf("Error: unable to create thread, %d\n", rc);
             exit(-1);

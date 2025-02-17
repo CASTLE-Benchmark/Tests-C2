@@ -134,7 +134,7 @@ int main() {
         char saltedPassword[65];
         snprintf(saltedPassword, sizeof(saltedPassword), "%s%s", password, salt);
         sha256(saltedPassword, digest);
-        if (strcmp(digest, storedPassword) != 0) {
+        if (strcmp(digest, (const char*)storedPassword) != 0) {
             printf("Invalid username or password.\n");
             return 1;
         }

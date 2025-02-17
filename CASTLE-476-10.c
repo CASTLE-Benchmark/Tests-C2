@@ -13,6 +13,6 @@ int* generateAlwaysNonNullResult() {
 int main() {
     int* a = generateAlwaysNonNullResult();
     printf("AlwaysNonNullResult: %d\n", *a);
-
+    free(a);
     return 0;
 }

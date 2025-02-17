@@ -17,6 +17,10 @@ void y(int *arr, int size) {
 
 int main() {
     int *p = (int *)x(A * B);
+    if (p == NULL) {
+        exit(1);
+    }
+    
     y(p, A * B);
 
     int z = (A + B) * (A - B) / (B - A + 1);

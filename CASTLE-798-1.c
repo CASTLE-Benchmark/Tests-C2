@@ -22,11 +22,9 @@ void aes256_encrypt(const char *plaintext, const unsigned char *key, const unsig
 
     // Provide the message to be encrypted, and obtain the encrypted output
     if (1 != EVP_EncryptUpdate(ctx, ciphertext, &len, (unsigned char *)plaintext, strlen(plaintext))) handleErrors();
-    ciphertext_len = len;
 
     // Finalize the encryption
     if (1 != EVP_EncryptFinal_ex(ctx, ciphertext + len, &len)) handleErrors();
-    ciphertext_len += len;
 
     // Clean up
     EVP_CIPHER_CTX_free(ctx);

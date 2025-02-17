@@ -134,7 +134,7 @@ int main() {
 
         char digest[65];
         sha256(password, digest);
-        if (strcmp(digest, storedPassword) != 0) {
+        if (strcmp(digest, (const char*)storedPassword) != 0) {
             printf("Invalid username or password.\n");
             return 1;
         }

@@ -42,8 +42,11 @@ int main() {
     // Output the result row by row
     int num_fields = mysql_num_fields(res);
     while ((row = mysql_fetch_row(res))) {
-        for (int i = 0; i < num_fields; i++) {
-            printf("%s ", row[i] ? row[i] : "NULL");
+        unsigned long *lengths;
+        lengths = mysql_fetch_lengths(res);
+        for(int i = 0; i < num_fields; i++) {
+            printf("[%.*s] ", (int) lengths[i],
+                    row[i] ? row[i] : "NULL");
         }
         printf("\n");
     }

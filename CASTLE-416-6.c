@@ -24,6 +24,9 @@ int main() {
     scanf("%d", &size);
 
     int* array = allocateArray(5);
+    if (array == NULL) {
+        exit(1);
+    }
     cleanup(array, 5);
 
     array[0] = size;
